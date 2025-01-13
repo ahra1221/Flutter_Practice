@@ -1,0 +1,86 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --track-widget-creation --device-id=00008120-001A6D440E69A01E --start-paused --dart-define=flutter.inspector.structuredErrors=true lib/main.dart
+
+## exception
+
+SocketException: SocketException: Send failed (OS Error: No route to host, errno = 65), address = 0.0.0.0, port = 5353
+
+```
+#0      _NativeSocket.send (dart:io-patch/socket_patch.dart:1275:34)
+#1      _RawDatagramSocket.send (dart:io-patch/socket_patch.dart:2590:15)
+#2      MDnsClient.lookup (package:multicast_dns/multicast_dns.dart:219:22)
+#3      MDnsVmServiceDiscovery._pollingVmService (package:flutter_tools/src/mdns_discovery.dart:236:36)
+<asynchronous suspension>
+#4      MDnsVmServiceDiscovery.firstMatchingVmService (package:flutter_tools/src/mdns_discovery.dart:189:56)
+<asynchronous suspension>
+#5      MDnsVmServiceDiscovery.getVMServiceUriForLaunch (package:flutter_tools/src/mdns_discovery.dart:452:50)
+<asynchronous suspension>
+#6      Future.any.onValue (dart:async/future.dart:614:5)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[!] Flutter (Channel stable, 3.27.1, on macOS 15.2 24C101 darwin-arm64, locale ko-KR)
+    • Flutter version 3.27.1 on channel stable at /Users/ahra/flutter
+    ! The flutter binary is not on your path. Consider adding /Users/ahra/flutter/bin to your path.
+    ! The dart binary is not on your path. Consider adding /Users/ahra/flutter/bin to your path.
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 17025dd882 (4 weeks ago), 2024-12-17 03:23:09 +0900
+    • Engine revision cb4b5fff73
+    • Dart version 3.6.0
+    • DevTools version 2.40.2
+    ✗ Downloaded executables cannot execute on host.
+      See https://github.com/flutter/flutter/issues/6207 for more information.
+      Flutter requires the Rosetta translation environment on ARM Macs. Try running:
+        sudo softwareupdate --install-rosetta --agree-to-license
+
+    • If those were intentional, you can disregard the above warnings; however it is recommended to use "git" directly to perform update checks and upgrades.
+
+[!] Android toolchain - develop for Android devices (Android SDK version 35.0.0)
+    • Android SDK at /Users/ahra/Library/Android/sdk
+    • Platform android-35, build-tools 35.0.0
+    • Java binary at: /Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 21.0.3+-79915917-b509.11)
+    ! Some Android licenses not accepted. To resolve this, run: flutter doctor --android-licenses
+
+[!] Xcode - develop for iOS and macOS (Xcode 16.2)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 16C5032a
+    ✗ CocoaPods not installed.
+        CocoaPods is a package manager for iOS or macOS platform code.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/to/platform-plugins
+      For installation instructions, see https://guides.cocoapods.org/using/getting-started.html#installation
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2024.2)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 21.0.3+-79915917-b509.11)
+
+[✓] VS Code (version 1.96.2)
+    • VS Code at /Users/ahra/Downloads/Visual Studio Code.app/Contents
+    • Flutter extension version 3.102.0
+
+[✓] Connected device (4 available)
+    • 고아라의 iPhone (mobile)            • 00008120-001A6D440E69A01E • ios            • iOS 18.1.1 22B91
+    • macOS (desktop)                 • macos                     • darwin-arm64   • macOS 15.2 24C101 darwin-arm64
+    • Mac Designed for iPad (desktop) • mac-designed-for-ipad     • darwin         • macOS 15.2 24C101 darwin-arm64
+    • Chrome (web)                    • chrome                    • web-javascript • Google Chrome 131.0.6778.265
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 3 categories.
+```
