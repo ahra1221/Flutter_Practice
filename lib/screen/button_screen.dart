@@ -3,7 +3,7 @@ import 'package:flutter_projects/screen/column_practice_screen.dart';
 import 'package:flutter_projects/screen/column_screen.dart';
 import 'package:flutter_projects/screen/container_practice_screen.dart';
 import 'package:flutter_projects/screen/container_screen.dart';
-import 'package:flutter_projects/screen/row_screen.dart';
+import 'package:flutter_projects/screen/row/row_screen.dart';
 
 class ButtonScreen extends StatelessWidget {
   const ButtonScreen({super.key});
