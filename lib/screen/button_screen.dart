@@ -3,6 +3,7 @@ import 'package:flutter_projects/screen/column_practice_screen.dart';
 import 'package:flutter_projects/screen/column_screen.dart';
 import 'package:flutter_projects/screen/container_practice_screen.dart';
 import 'package:flutter_projects/screen/container_screen.dart';
+import 'package:flutter_projects/screen/row/row_practice_screen.dart';
 import 'package:flutter_projects/screen/row/row_screen.dart';
 
 class ButtonScreen extends StatelessWidget {
@@ -54,7 +55,15 @@ class ButtonScreen extends StatelessWidget {
                     return RowScreen();
                   }));
                 },
-                child: Text("row"))
+                child: Text("row")),
+            SizedBox(height: 10),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return RowPracticeScreen();
+                  }));
+                },
+                child: Text("row practice"))
           ],
         ),
       ),
