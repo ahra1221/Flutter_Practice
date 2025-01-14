@@ -7,7 +7,24 @@ class ContainerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Container"),
+      appBar: AppBar(title: Text("Container"),),
+      body: Container(
+        width: 300,
+        height: 300,
+        color: Colors.grey,
+        padding: EdgeInsets.all(10),
+        alignment: Alignment.bottomRight,
+        child: Container(
+          width: 100,
+          height: 100,
+          margin: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: Colors.indigo,
+            border: Border.all(width: 3, color: Colors.redAccent),
+            borderRadius: BorderRadius.circular(10)
+          ),
+        ),
+      ),
     );
   }
 }
