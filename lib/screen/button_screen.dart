@@ -1,8 +1,10 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screen/column_screen.dart';
+import 'package:flutter_projects/screen/container_screen.dart';
+import 'package:flutter_projects/screen/row_screen.dart';
 
 class ButtonScreen extends StatelessWidget {
-  const ButtonScreen ({super.key});
+  const ButtonScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +14,29 @@ class ButtonScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ElevatedButton(onPressed: (){}, child: Text("button1")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ContainerScreen();
+                  }));
+                },
+                child: Text("container")),
             SizedBox(height: 10),
-            ElevatedButton(onPressed: (){}, child: Text("button2")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ColumnScreen();
+                  }));
+                },
+                child: Text("column")),
             SizedBox(height: 10),
-            ElevatedButton(onPressed: (){}, child: Text("button3"))
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return RowScreen();
+                  }));
+                },
+                child: Text("row"))
           ],
         ),
       ),
