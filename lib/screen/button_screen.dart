@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/screen/column_screen.dart';
+import 'package:flutter_projects/screen/container_practice_screen.dart';
 import 'package:flutter_projects/screen/container_screen.dart';
 import 'package:flutter_projects/screen/row_screen.dart';
 
@@ -21,6 +22,14 @@ class ButtonScreen extends StatelessWidget {
                   }));
                 },
                 child: Text("container")),
+            SizedBox(height: 10),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ContainerPracticeScreen();
+                  }));
+                },
+                child: Text("container practice")),
             SizedBox(height: 10),
             ElevatedButton(
                 onPressed: () {
