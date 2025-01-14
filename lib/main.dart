@@ -1,18 +1,18 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screen/button_screen.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      body: Container(
-        color: Colors.indigo,
-        padding: EdgeInsets.all(50),
-        child: Container(
-          width: 100,
-          height: 100,
-          color: Colors.redAccent,
-        ),
-      ),
-    )
-  ));
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp ({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ButtonScreen(),
+    );
+  }
 }
