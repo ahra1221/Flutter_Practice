@@ -4,6 +4,7 @@ import 'package:flutter_projects/screen/column/column_screen.dart';
 import 'package:flutter_projects/screen/complicate_practice.dart';
 import 'package:flutter_projects/screen/container/container_practice_screen.dart';
 import 'package:flutter_projects/screen/container/container_screen.dart';
+import 'package:flutter_projects/screen/image/image_screen.dart';
 import 'package:flutter_projects/screen/row/row_practice_screen.dart';
 import 'package:flutter_projects/screen/row/row_screen.dart';
 import 'package:flutter_projects/screen/text/text_screen.dart';
@@ -81,7 +82,15 @@ class ButtonScreen extends StatelessWidget {
                     return TextScreen();
                   }));
                 },
-                child: Text("text screen"))
+                child: Text("text screen")),
+            SizedBox(height: 10),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ImageScreen();
+                  }));
+                },
+                child: Text("image screen"))
           ],
         ),
       ),
