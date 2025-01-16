@@ -64,4 +64,35 @@ class Collections {
 
     dynamicMap.clear();
   }
+
+  void mapPractice() {
+    Map<String, int> practiceMap = {};
+    practiceMap["a"] = 1;
+    practiceMap["b"] = 2;
+    practiceMap["c"] = 3;
+    // practiceMap.remove("b");
+    practiceMap.addAll({"a":1, "b": 2, "c": 3});
+    practiceMap.removeWhere (
+      (key, value) {
+        return key == "b";
+      },
+    );
+  }
+
+  void collectionSet() {
+    Set ss = {};
+    ss.add("a");
+    ss.add(1);
+    print("collectionSet 1: $ss");
+
+    ss.remove("a");
+    print("collectionSet 2: $ss");
+  }
+
+  void setPractice() {
+    Set<String> practiceSet = {"한국", "일본", "미국", "태국", "홍콩"};
+    practiceSet.removeWhere(
+      (e) => e == "한국"
+    );
+  }
 }
