@@ -109,7 +109,15 @@ class ButtonScreen extends StatelessWidget {
                       return StackPracticeScreen();
                     }));
                   },
-                  child: Text("stack practice"))
+                  child: Text("stack practice")),
+              SizedBox(height: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return StackPracticeScreen();
+                    }));
+                  },
+                  child: Text("listview screen"))
             ],
           ),
         )
