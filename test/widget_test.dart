@@ -1,5 +1,16 @@
 
+import 'collections.dart';
+
 void main() {
+
+  Collections collections = Collections();
+  collections.listAdd();
+  collections.listRemove();
+  collections.listController();
+  collections.listPractice();
+}
+
+void variableTest() {
   String name = "ahra";
   print(name);
 
