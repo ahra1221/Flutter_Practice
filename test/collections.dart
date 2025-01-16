@@ -46,4 +46,22 @@ class Collections {
     animalList.addAll(["강아지", "고양이", "하마", "거위", "펭귄"]);
     animalList.removeAt(1);
   }
+
+  void collectionMap() {
+    Map<String, int> nameAgeMap = {};
+    nameAgeMap["ahra"] = 25;
+    print(nameAgeMap);
+
+    Map<String, dynamic> dynamicMap = {};
+    dynamicMap["a"] = 1;
+    dynamicMap["b"] = "고양이";
+    dynamicMap["c"] = true;
+    print(dynamicMap);
+    print("get dynamicMap: ${dynamicMap["b"]}");
+
+    dynamicMap.remove("b");
+    print("remove dynamicMap: $dynamicMap");
+
+    dynamicMap.clear();
+  }
 }
