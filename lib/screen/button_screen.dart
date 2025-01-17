@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screen/click/click_screen.dart';
 import 'package:flutter_projects/screen/column/column_practice_screen.dart';
 import 'package:flutter_projects/screen/column/column_screen.dart';
 import 'package:flutter_projects/screen/complicate_practice.dart';
@@ -114,7 +115,7 @@ class ButtonScreen extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return StackPracticeScreen();
+                      return ClickScreen();
                     }));
                   },
                   child: Text("listview screen"))
