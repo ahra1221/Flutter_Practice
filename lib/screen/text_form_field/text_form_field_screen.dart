@@ -9,6 +9,30 @@ class TextFormFieldScreen extends StatefulWidget {
 }
 
 class _TextFormFieldScreenState extends State<TextFormFieldScreen> {
+
+  String textValue = "";
+  TextEditingController controller = TextEditingController();
+
+  /// 위젯이 생성될 때 최초 1번 진입
+  @override
+  void initState() {
+    // TODO: implement initState
+    controller.addListener(
+        () {
+          setState(() {});
+        }
+    );
+    super.initState();
+  }
+
+  /// 위젯이 종료될 때 1번 호출
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,9 +44,14 @@ class _TextFormFieldScreenState extends State<TextFormFieldScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
+              Text(controller.text),
               Padding(
                 padding: const EdgeInsets.all(12),
                 child: TextFormField(
+                  onChanged: (value) {
+                    textValue = value;
+                    setState(() {});
+                  },
                   // keyboardType: TextInputType.emailAddress,
                   keyboardType: TextInputType.visiblePassword,
                   // obscureText: true,
