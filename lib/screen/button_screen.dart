@@ -6,6 +6,7 @@ import 'package:flutter_projects/screen/complicate_practice.dart';
 import 'package:flutter_projects/screen/container/container_practice_screen.dart';
 import 'package:flutter_projects/screen/container/container_screen.dart';
 import 'package:flutter_projects/screen/image/image_screen.dart';
+import 'package:flutter_projects/screen/network/network_screen.dart';
 import 'package:flutter_projects/screen/row/row_practice_screen.dart';
 import 'package:flutter_projects/screen/row/row_screen.dart';
 import 'package:flutter_projects/screen/stack/stack_practice_screen.dart';
@@ -117,10 +118,10 @@ class ButtonScreen extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return TodoScreen();
+                      return NetworkScreen();
                     }));
                   },
-                  child: Text("listview screen"))
+                  child: Text("network screen"))
             ],
           ),
         )
