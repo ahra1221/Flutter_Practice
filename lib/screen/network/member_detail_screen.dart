@@ -71,15 +71,28 @@ class _MemberDetailScreenState extends State<MemberDetailScreen> {
                   hintText: "개인 정보를 입력해주세요."
               ),
             ),
-            SizedBox(height: 10,),
-            ElevatedButton(
-                onPressed: (){},
-                style: ElevatedButton.styleFrom(
-                  fixedSize: Size(double.infinity, 50)
-                ),
-                child: Text("update")
+            SizedBox(
+              height: 10,
             ),
-            SizedBox(height: 10,),
+            ElevatedButton(
+                onPressed: () async {
+                  Response response =
+                      await widget.dio.patch("/api/v1/member/update", data: {
+                    "email": widget.email,
+                    "password": pwController.text,
+                    "description": descriptionController.text
+                      });
+                  if (response.statusCode.toString() == "200") {
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(SnackBar(content: Text("update success")));
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                    fixedSize: Size(double.infinity, 50)),
+                child: Text("update")),
+            SizedBox(
+              height: 10,
+            ),
             ElevatedButton(
                 onPressed: (){},
                 style: ElevatedButton.styleFrom(
