@@ -7,6 +7,7 @@ import 'package:flutter_projects/screen/container/container_practice_screen.dart
 import 'package:flutter_projects/screen/container/container_screen.dart';
 import 'package:flutter_projects/screen/image/image_screen.dart';
 import 'package:flutter_projects/screen/network/network_screen.dart';
+import 'package:flutter_projects/screen/pageview/pageview_screen.dart';
 import 'package:flutter_projects/screen/row/row_practice_screen.dart';
 import 'package:flutter_projects/screen/row/row_screen.dart';
 import 'package:flutter_projects/screen/stack/stack_practice_screen.dart';
@@ -121,7 +122,15 @@ class ButtonScreen extends StatelessWidget {
                       return NetworkScreen();
                     }));
                   },
-                  child: Text("network screen"))
+                  child: Text("network screen")),
+              SizedBox(height: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return PageViewScreen();
+                    }));
+                  },
+                  child: Text("pageview screen"))
             ],
           ),
         )
