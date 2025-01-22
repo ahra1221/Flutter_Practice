@@ -82,7 +82,7 @@ class _MemberDetailScreenState extends State<MemberDetailScreen> {
                     "password": pwController.text,
                     "description": descriptionController.text
                       });
-                  if (response.statusCode.toString() == "200") {
+                  if (response.statusCode.toString() == "201") {
                     ScaffoldMessenger.of(context)
                         .showSnackBar(SnackBar(
                         content: Text("update success")
@@ -98,7 +98,21 @@ class _MemberDetailScreenState extends State<MemberDetailScreen> {
               height: 10,
             ),
             ElevatedButton(
-                onPressed: (){},
+                onPressed: () async {
+                  Response response = await widget.dio.delete("/api/v1/member/delete", data: {
+                    "email": idController.text,
+                    "password": pwController.text,
+                  });
+
+                  if(response.statusCode == 204) {
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(SnackBar(
+                        content: Text("delete success")
+                    ));
+                    await Future.delayed(Duration(seconds: 1));
+                    Navigator.pop(context, true);
+                  }
+                },
                 style: ElevatedButton.styleFrom(
                     fixedSize: Size(double.infinity, 50)
                 ),
