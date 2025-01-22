@@ -12,6 +12,17 @@ class _TabBarScreenState extends State<TabBarScreen>
   late TabController tabController = TabController(length: 8, vsync: this);
   String selectedTab = "none";
 
+  List<String> labelList = [
+    "강아지",
+    "고양이",
+    "뱀",
+    "코끼리",
+    "원숭이",
+    "하마",
+    "얼룩말",
+    "호랑이",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,11 +32,15 @@ class _TabBarScreenState extends State<TabBarScreen>
       ),
       body: Column(
         children: [
-          Text(selectedTab),
+          Text(
+            selectedTab,
+            style: TextStyle(fontSize: 20),
+          ),
           TabBar(
               controller: tabController,
               onTap: (value) {
-                print("value: $value");
+                selectedTab = labelList[value];
+                setState(() {});
               },
               isScrollable: true,
               labelStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -39,37 +54,15 @@ class _TabBarScreenState extends State<TabBarScreen>
               indicator: BoxDecoration(
                   color: Colors.orange.shade100,
                   borderRadius: BorderRadius.circular(15),
-                  border: Border.all(width: 5, color: Colors.red)),
+                  border: Border.all(width: 5, color: Colors.red)
+              ),
               dividerHeight: 3,
               dividerColor: Colors.grey,
               padding: EdgeInsets.all(10),
               labelPadding: EdgeInsets.all(10),
-              tabs: [
-                Tab(
-                  text: "강아지",
-                ),
-                Tab(
-                  text: "고양이",
-                ),
-                Tab(
-                  text: "뱀",
-                ),
-                Tab(
-                  text: "코끼리",
-                ),
-                Tab(
-                  text: "원숭이",
-                ),
-                Tab(
-                  text: "하마",
-                ),
-                Tab(
-                  text: "얼룩말",
-                ),
-                Tab(
-                  text: "호랑이",
-                ),
-              ]),
+              tabs: List.generate(
+                  labelList.length, (index) => Tab(text: labelList[index]))
+          ),
         ],
       ),
     );
