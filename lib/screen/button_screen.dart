@@ -5,6 +5,7 @@ import 'package:flutter_projects/screen/column/column_screen.dart';
 import 'package:flutter_projects/screen/complicate_practice.dart';
 import 'package:flutter_projects/screen/container/container_practice_screen.dart';
 import 'package:flutter_projects/screen/container/container_screen.dart';
+import 'package:flutter_projects/screen/default_tab_controller/default_tab_controller_screen.dart';
 import 'package:flutter_projects/screen/image/image_screen.dart';
 import 'package:flutter_projects/screen/network/network_screen.dart';
 import 'package:flutter_projects/screen/pageview/pageview_screen.dart';
@@ -136,10 +137,11 @@ class ButtonScreen extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return TabBarScreen();
+                      return DefaultTabControllerScreen();
                     }));
                   },
-                  child: Text("tabbar screen"))
+                  child: Text("tabbar screen")),
+              SizedBox(height: 10)
             ],
           ),
         )
