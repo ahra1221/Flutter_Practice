@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_projects/screen/bottom_sheet/bottom_sheet_screen.dart';
 import 'package:flutter_projects/screen/click/click_screen.dart';
 import 'package:flutter_projects/screen/column/column_practice_screen.dart';
 import 'package:flutter_projects/screen/column/column_screen.dart';
@@ -138,10 +139,10 @@ class ButtonScreen extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return DialogScreen();
+                      return BottomSheetScreen();
                     }));
                   },
-                  child: Text("dialog screen")),
+                  child: Text("bottomsheet screen")),
               SizedBox(height: 10)
             ],
           ),
