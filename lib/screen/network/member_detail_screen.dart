@@ -84,7 +84,11 @@ class _MemberDetailScreenState extends State<MemberDetailScreen> {
                       });
                   if (response.statusCode.toString() == "200") {
                     ScaffoldMessenger.of(context)
-                        .showSnackBar(SnackBar(content: Text("update success")));
+                        .showSnackBar(SnackBar(
+                        content: Text("update success")
+                    ));
+                    await Future.delayed(Duration(seconds: 1));
+                    Navigator.pop(context, true);
                   }
                 },
                 style: ElevatedButton.styleFrom(
