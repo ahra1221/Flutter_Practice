@@ -1,0 +1,5 @@
+getx usage
+
+mycontroller에서 count라는 Int type 변수를 static으로 가지고 있다.
+mycontroller에서 count 값을 변경하는 함수를 호출
+-> getx screen과 getx second screen에서 보여주는 count값이 업데이트 된다.
