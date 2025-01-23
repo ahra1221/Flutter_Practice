@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projects/screen/state_management/get/get_x_screen.dart';
+import 'package:flutter_projects/screen/state_management/notifier/notifier_screen.dart';
+import 'package:flutter_projects/screen/state_management/provider/provider_screen.dart';
 
 class StateManagementScreen extends StatelessWidget {
   const StateManagementScreen({super.key});
@@ -19,7 +21,21 @@ class StateManagementScreen extends StatelessWidget {
                   return const GetXScreen();
                 }));
               },
-              child: Text("GetX"))
+              child: Text("GetX")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const ProviderScreen();
+                }));
+              },
+              child: Text("Provider")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const NotifierScreen();
+                }));
+              },
+              child: Text("Notifier"))
         ],
       ),
     );

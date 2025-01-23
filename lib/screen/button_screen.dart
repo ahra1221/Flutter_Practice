@@ -141,10 +141,10 @@ class ButtonScreen extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return ProviderScreen();
+                      return StateManagementScreen();
                     }));
                   },
-                  child: Text("provider screen")),
+                  child: Text("statemanagement screen")),
               SizedBox(height: 10)
             ],
           ),
