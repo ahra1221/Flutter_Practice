@@ -1,22 +1,22 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_projects/screen/state_management/notifier/notifier_second_screen.dart';
-import 'package:flutter_projects/screen/state_management/notifier/notifier_view_model.dart';
 
-class NotifierScreen extends StatefulWidget {
-  const NotifierScreen({super.key});
+import 'package:flutter/material.dart';
+import 'notifier_view_model.dart';
+
+class NotifierSecondScreen extends StatefulWidget {
+  const NotifierSecondScreen({super.key});
 
   @override
-  State<NotifierScreen> createState() => _NotifierScreenState();
+  State<NotifierSecondScreen> createState() => _NotifierSecondScreenState();
 }
 
-class _NotifierScreenState extends State<NotifierScreen> {
+class _NotifierSecondScreenState extends State<NotifierSecondScreen> {
   final NotifierViewModel vm = NotifierViewModel.instance;
   VoidCallback? listener;
 
   @override
   void initState() {
-    // TODO: implement initState
     listener = () {
+      /// notifyListeners() 가 호출되면 진입.
       setState(() {});
     };
     vm.addListener(listener!);
@@ -25,7 +25,6 @@ class _NotifierScreenState extends State<NotifierScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     vm.removeListener(listener!);
     super.dispose();
   }
@@ -42,21 +41,14 @@ class _NotifierScreenState extends State<NotifierScreen> {
           Center(
             child: Text(
               vm.count.toString(),
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
           ),
           ElevatedButton(
               onPressed: () {
                 vm.countUp();
               },
-              child: Text("count up")),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const NotifierSecondScreen();
-                }));
-              },
-              child: Text("go second screen"))
+              child: Text("Count Up"))
         ],
       ),
     );
