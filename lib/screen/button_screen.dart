@@ -15,6 +15,7 @@ import 'package:flutter_projects/screen/row/row_practice_screen.dart';
 import 'package:flutter_projects/screen/row/row_screen.dart';
 import 'package:flutter_projects/screen/stack/stack_practice_screen.dart';
 import 'package:flutter_projects/screen/stack/stack_screen.dart';
+import 'package:flutter_projects/screen/state_management/provider/provider_screen.dart';
 import 'package:flutter_projects/screen/state_management/state_management_screen.dart';
 import 'package:flutter_projects/screen/tabbar/tab_bar_screen.dart';
 import 'package:flutter_projects/screen/text/text_screen.dart';
@@ -140,10 +141,10 @@ class ButtonScreen extends StatelessWidget {
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return StateManagementScreen();
+                      return ProviderScreen();
                     }));
                   },
-                  child: Text("statemanagement screen")),
+                  child: Text("provider screen")),
               SizedBox(height: 10)
             ],
           ),
