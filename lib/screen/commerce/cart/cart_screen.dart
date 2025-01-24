@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_projects/screen/commerce/cart/cart_view_model.dart';
 import 'package:flutter_projects/screen/commerce/cart/widgets/cart_product.dart';
 
+import '../util.dart';
+
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
 
@@ -35,6 +37,8 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return CartProduct(
-        productList: vm.cartList, scroll: true, onPressed: (productModel) {});
+        productList: vm.cartList, scroll: true, onPressed: (productModel) {
+          vm.removeProduct(productModel);
+    });
   }
 }

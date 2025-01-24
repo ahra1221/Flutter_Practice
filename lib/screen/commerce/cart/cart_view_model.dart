@@ -21,4 +21,10 @@ class CartViewModel with ChangeNotifier {
     notifyListeners();
     Util.showToast("add cart!");
   }
+
+  void removeProduct(ProductModel productModel) {
+    cartList.removeWhere((element) => element == productModel);
+    notifyListeners();
+    Util.showToast("remove success");
+  }
 }
