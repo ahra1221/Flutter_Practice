@@ -95,7 +95,6 @@ class _HomeScreenState extends State<HomeScreen> {
         HomeSubtitle(label: "오늘만 할인"),
         CartProduct(productList: newProduct, scroll: false, onPressed: (productModel) {
           CartViewModel.instance.addProduct(productModel);
-          Util.showToast("add cart!");
         }),
         SizedBox(height: 80)
       ],
