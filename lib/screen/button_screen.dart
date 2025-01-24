@@ -3,6 +3,7 @@ import 'package:flutter_projects/screen/bottom_sheet/bottom_sheet_screen.dart';
 import 'package:flutter_projects/screen/click/click_screen.dart';
 import 'package:flutter_projects/screen/column/column_practice_screen.dart';
 import 'package:flutter_projects/screen/column/column_screen.dart';
+import 'package:flutter_projects/screen/commerce/navigation/navigation_screen.dart';
 import 'package:flutter_projects/screen/complicate_practice.dart';
 import 'package:flutter_projects/screen/container/container_practice_screen.dart';
 import 'package:flutter_projects/screen/container/container_screen.dart';
@@ -35,6 +36,14 @@ class ButtonScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return NavigationScreen();
+                    }));
+                  },
+                  child: Text("commerce")),
+              SizedBox(height: 10),
               ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) {
