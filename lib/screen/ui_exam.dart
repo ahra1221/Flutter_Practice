@@ -10,9 +10,9 @@ class UiExam extends StatefulWidget {
 class _UiExamState extends State<UiExam> {
 
   List<String> imageList = [
-    "assets/lecture_flutter_image.png"
-    "assets/company_responsibility.png"
-    "assets/company_sustainability.png"
+    "assets/lecture_flutter_image.png",
+    "assets/company_responsibility.png",
+    "assets/company_sustainability.png",
   ];
 
   @override
