@@ -21,6 +21,7 @@ import 'package:flutter_projects/screen/tabbar/tab_bar_screen.dart';
 import 'package:flutter_projects/screen/text/text_screen.dart';
 import 'package:flutter_projects/screen/text_form_field/text_form_field_screen.dart';
 import 'package:flutter_projects/screen/todo/todo_screen.dart';
+import 'package:flutter_projects/screen/ui_exam.dart';
 
 class ButtonScreen extends StatelessWidget {
   const ButtonScreen({super.key});
@@ -145,7 +146,14 @@ class ButtonScreen extends StatelessWidget {
                     }));
                   },
                   child: Text("statemanagement screen")),
-              SizedBox(height: 10)
+              SizedBox(height: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return UiExam();
+                    }));
+                  },
+                  child: Text("ui screen")),
             ],
           ),
         )
