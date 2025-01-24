@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_projects/screen/commerce/cart/cart_view_model.dart';
 import 'package:flutter_projects/screen/commerce/home/model/product_model.dart';
+import 'package:flutter_projects/screen/commerce/cart/widgets/cart_product.dart';
 import 'package:flutter_projects/screen/commerce/home/widgets/home_image.dart';
 import 'package:flutter_projects/screen/commerce/home/widgets/home_product.dart';
 import 'package:flutter_projects/screen/commerce/home/widgets/home_short_cut.dart';
 import 'package:flutter_projects/screen/commerce/home/widgets/home_subtitle.dart';
+import 'package:flutter_projects/screen/commerce/util.dart';
 
 import '../aseets_path.dart';
 
@@ -89,6 +92,11 @@ class _HomeScreenState extends State<HomeScreen> {
         HomeProduct(productList: newProduct),
         HomeSubtitle(label: "인기상품"),
         HomeProduct(productList: popularProduct),
+        HomeSubtitle(label: "오늘만 할인"),
+        CartProduct(productList: newProduct, scroll: false, onPressed: (productModel) {
+          CartViewModel.instance.addProduct(productModel);
+          Util.showToast("add cart!");
+        }),
         SizedBox(height: 80)
       ],
     );
